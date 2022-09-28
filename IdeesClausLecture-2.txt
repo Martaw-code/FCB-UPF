@@ -1,0 +1,195 @@
+IDEES CLAUS: Unix and the command line
+
+INTRODUCCIÓ
+
+UNIX és el sistema operatiu multiusuari i multitasca més popular i potent.
+
+Un sistema operatiu no deixa de ser un conjunt de programes que actuen com a
+enllaç entre l'ordinador i qualsevol usuari que interactui amb aquest.
+
+Per tant ens podem imaginar que darrere de qualsevol acció que faci un usuari,
+ja sigui accedir a una carpeta, obrir una aplicació o bé connectar-nos a la
+xarxa, el sistema operatiu serà l'intermediari que li comunicarà a l'ordinador
+què és el que volem. 
+
+El com ja no ho controlem nosaltres, sinó que serà aquest
+que ho gestionarà. Per tant, podem simplificar i dir que cada programa que
+compon el Sistema Operatiu farà alguna acció per fer-nos la vida més fàcil.
+
+Per tant quan ens parla de que és "un software", simplement es refereix a un
+conjunt de programes. 
+
+Obviament, també controlarà la manipulació dels diferents dispositius 
+físics que formen un ordinador. Amb això es refereix per exemple a que
+controlarà la gestió de com es guarden els fitxers a l'ordinador, on es
+guarden al disc i també li donarà ordres al processador de què executar
+primer i quin programa té més prioritat.
+
+Per exemple: Si volem entrar al navegador i de mentres tenim l'excel i estem 
+treballant amb aquest, voldrem 2 coses: 
+
+1. Que no se'ns tanqui l'excel si obrim el navegador (Exemple de multitasca)
+2. Posar en primer pla el navegador 
+
+Com es comenta, hi ha moltes variants i implementacions d'UNIX, una de les més
+populars és:
+
+Linux, Android, iOS o macOS que la seva base del sistema es basa en un UNIX.
+Per tant, encara que siguin diferents variants comparteix algunes
+característiques tècniques(comandes i programes)
+
+Veure més: https://ca.wikipedia.org/wiki/Unix
+
+
+CAPES DEL SISTEMA OPERATIU UNIX
+
+Com bé he comentat, el UNIX no deixa de ser un intermediari entre nosaltres i
+qualsevol ordinador.
+
+Per tant des de que nosaltres fem una acció i aquesta arriba al HW hem de ser
+conscients que passen una sèrie de coses/etapes entremig. 
+
+Per tant hi ha una ABSTRACCIÓ entre el que veiem i el que passa en realitat. 
+
+Gràcies al SO pues no haurem de dir-li a l'ordinador pas per pas què volem,
+com ho volem, com gestionar la resta de coses que està fent, tampoc ens hem de
+preocupar per la memòria que consumirem, ni tampoc de infinitud de coses que
+fa la nostra màquina.
+
+Per tant tenim:
+
+Ex: Suposem que un usuari vol obrir una carpeta
+
+L'usuari inicialment es troba a l'escriptori, on té un munt de carpetes i
+casualment vol obrir la de FCB. Sabem que simplement haurà de fer un clic per
+poder obrir-la i veure el seu contingut. 
+
+Realment, si ho pensem hi han moltes tàsques prèvies abans que s'obri la
+carpeta, però gràcies a la feina que fa el SO, ens n'abstreu d'aquestes.
+
+Quan l'usuari faci el clic, el farà sobre la interífie(la interfície gràfica,
+que en el nostre cas és l'escriptori) aquesta interfície està construida
+perquè ens sigui més fàcil interactuar amb l'ordinador però aquesta no deixa
+de ser una abstracció de la "terminal/shell" de comandes. Per tant el SO
+traduirà el clic sobre la interfície a una comanda de terminal que serà
+executada posteriorment.
+
+RECORDAR: La terminal permet a l'usuari interactuar amb l'ordinador escrivint
+ordres/comandes a través del terminal d'ordinador o un emulador de
+terminal(git bash).
+
+I què passa amb la comanda que llença la terminal? Doncs bé passarà primer de
+tot pel kernel abans d'arribar al hardware perquè el processador l'executi.
+
+El kernel és el nucli del sistema operatiu i és el que ho acaba gestionant
+tot, dirà quan s'ha de fer el clic i si creu convenient que ha d'esperar
+perquè el processador està fent una altre cosa, ho posarà en "espera", després
+traduirà l'acció a un conjunt de 0s i 1s i el processador executarà el clic
+que finalment es veurà reflectit en la operatura de la carpeta.
+
+Per tant: la terminal de l'ordinador també es pot considerar una interfície,
+però no és tant "user-friendly" per una persona que no estigui acostumada a
+escriure comandes. Per això hi ha la GUI, perquè ens faci la vida més fàcil.
+
+TERMINAL
+
+TOT SO actual té una interfície que ens permet fer accions a la nostra
+màquina.
+
+Darrere de cada aplicació a la nostra màquina hi ha el SO que acabarà
+decidint una pila de coses que l'usuari per sort no ha de gestionar.
+
+Després xerra sobre com tenir Linux si tenim Windows al nostre ordinador,
+doncs bé, opcions:
+
+-> Crear una màquina virtual i afegir-li el sistema operatiu Linux. (resumint:
+simplement una màquina és virtual perquè la simulem amb un conjunt de
+programes al nostre ordinador. Concretament ens baixem una aplicació que ens permetrà tenir
+diferents opcions de màquines i sistemes operatius que realment no existiran,
+però podrem crear com un "ordinador des de zero amb un altre sistema que no
+sigui el nostre" o sí, si volem
+
+-> Fer una partició del disc dur i instal·lar un sistema en cada banda
+(literalment vol dir, si tenim 256gb d'emmagatzament o el que sigui d'espai,
+partir aquest espai en una fracció que a nosaltres en interessi, com 128gb i
+128gb i a cada banda instal·lar-hi un sistema per tenir en un mateix
+ordinador, dos sistemes operatius que seran en tot moment: INDEPENDENTS!)
+
+-> Tenir una màquina al cloud, al núvol, accedir-hi mitjançant la terminal de
+comandes o mitjançant el Microsoft Remote Desktop i connectar-nos a una
+màquina que tingui Linux
+
+PERQUÈ UNA TERMINAL?
+
+Coi perquè en veritat és molt senzill i eficient poder de demanar-li coses a
+l'ordinador des de una terminal. P.ex: Imagina que tens un caos amb les
+carpetes que flipes, una dins de l'altre o no saps veure-les a simple vista,
+ja que tens tantes icones que flipes. Doncs senzill, obres una terminal
+escriure "quatre comandes" i sempre podràs reproduir els passos que has fet
+
+Per tant, tindrem:
+
+Modularitat: reutilització i encadenament de càlculs.
+Eficiència: automatització dels fluxos de treball.
+Reproductibilitat: enregistrament de passos de càlcul.
+
+SISTEMA DE FITXERS DE UNIX
+
+Molt important tenir clar com ho fa el sistema de fitxers que fem servir per emmagatzemar dades.
+
+El sistema de fitxers determina bàsicament la forma en com s'organitzen els fitxers i les 
+interfícies gràfiques d'usuari ens proporcionen una interfície gràfica a la
+organització que ens amaga el sistema operatiu.
+
+Aprendreu bàsicament com treballar amb el sistema de fitxers mitjançant la
+línia d'ordres/terminal/shell de UNIX:
+
+-> Coneixement sobre com el sistema de fitxers emmagatzema els fitxers a l'ordinador.
+-> Apreneu les ordres/comandes del sistema de fitxers i la sintaxi per
+especificar-les al shell/terminal.
+
+Teniu una foto que us representa gràficament la jerarquia del sistema de
+fitxers. També li'n diem arbre.
+
+Tenim dos tipus principals de fitxers al sistema de fitxers: fitxers normals i directoris.
+
+Els directoris poden emmagatzemar fitxers normals i altres directoris.
+
+A la part superior de la jerarquia tenim el directori arrel(root), i és on a
+partir d'aquell s'originen les altres branques. (el directori arrel sol ser el
+que es representa amb (~) o el mític (/) vaja l'inici de la ruta de comandes
+si executeu "pwd" (sense les comes)
+
+
+PATH o RUTA: Ruta: ubicació única al sistema de fitxers representada per una
+seqüència de directoris, que acaba opcionalment amb un fitxer normal, separat
+pel caràcter de barra inclinada /, per exemple, /home/professor/notes. Noteu
+que el path, exemple: /Users/marta/Desktop no deixa de ser una ruta que llegim
+de d'esquerra a dreta o bé si està en forma d'arbre, baixem avall. Les barres
+"/" ens representen el canvi de directori. Sempre és important tenir clar cap
+a on volem anar i des d'on. I el path ens permetrà arribar-hi.
+
+
+Per defecte quan obrim la terminal de comandes ens trobarem en algun lloc del
+nostre ordinador, és a dir, en alguna ruta incial. Aquesta és el directori
+d'inici i serà sempre (~) a partir d'aquesta ens podrem dirigir a la resta. I
+li'n diem que es el nostre "HOME DIRECTORY)
+
+
+Directori de treball actual (CWD): la comanda cwd ens diu el directori actual on som. I el represenem
+per un punt(.) Quan copiem arxius d'un lloc a una altre, com a ruta de desti
+posem normalment un . Exemple: cp /Users/marta/Desktop/a.txt .
+
+Copiem el que hi ha a la ruta que acaba amb el fitxer a.txt:
+/Users/marta/Desktop/a.txt al directori actual, que no deixa de ser una ruta,
+però que li fem un àlies i la representem per un punt.
+
+Directori anterior: el representem per (..) i fem a la terminal cd .. anirem
+endarrera a la ruta de comandes.
+
+Camí absolut: camí que comença al directori arrel: /home/professor/notes
+
+Camí relatiu: camí que comença en un CWD donat: ./notes, ../examens, etc.
+
+
+
