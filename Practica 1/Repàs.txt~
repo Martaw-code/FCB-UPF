@@ -1,0 +1,140 @@
+Aquesta pràctica no proposa resoldre cap exercici. Tot i axí demana practicar
+una mica i familiaritzar-se amb l'entorn.
+
+Repàs rapid de les comandes:
+
+mkdir : permet crear un nou directori aka carpeta. 
+Ús de la comanda: mkdir nomCarpeta
+
+ls: llista el contingut del que es troba en un directori.
+Ús de la comanda: ls 
+O també: ls -l (per visualitzar el contingut en forma de llista
+O també: ls rutaDirectoris (per veure que hi ha en el darrer directori i poder
+llistar-lo per pantalla) (És molt còmode, ens pernet veure que hi ha en un
+directtori que es troba en una ruta única de l'ordinador sense moure'ns del
+directori actual
+
+pwd: ens permet veure la ruta actual en la que ens trobem. Basicament demanem
+que ens retorni on coi som per saber des de quin punt a quin punt hem d'enviar
+les coses o copiar-les si ho necessitem
+Ús de la comanda: pwd
+
+whoami: et retorna quin usuari és el que ha iniciat sessió al sistema
+Ús de la comanda: whoami
+
+Si us fixeu a la seva terminal diu messi, això és perquè li ha dit al seu
+ordinador messi i ha entrat amb l'usuari robert
+
+man: permet consultar al manual què fa una comanda. Si feu servir git bash no
+us funcionarà ja que si executeu "help", sense comes veureu les comandes
+disponibles i no les teniu totes. Us deixo el manual aquí:
+Ús de la comanda: man algunaComanda
+
+https://man7.org/linux/man-pages/man1/man.1.html
+
+--help: podeu afegir aquesta opció a qualsevol comanda per veure quines
+opcions té aquesta. Una opció no deixa d'afegir alguna cosa de valor a la
+funcionalitat de la comanda, és a dir, no deixa de comportar-se com ho feia
+simplement el que retornarà serà lleugermanet diferent en funció del que li
+haguem dit.
+ÚS de la comanda: comanda --help
+
+cd : ens permet canviar-nos de directori, en concret ens permet canviar-los
+del directori al que estem treballant, li diem (working directory) a un altre
+directori que li especifiquem.
+Ús de la comanda: cd nomDirectori
+O bé, ús de la comanda: cd rutaDeDirectori, ex: cd /Users/alumne/Desktop
+(anirem a l'escriptori en ultima instància perquè es el darrer directori que
+apareix)
+Ús de la comanda: cd .. (en permet anar endarrere en la ruta/path)
+
+cp: ens permet copiar algun fitxer d'una ruta d'origen a una ruta destí.
+Exemple: cp /Users/marta/Desktop/a.txt /Users/marta/Desktop/nouD/
+
+Copiem el fitxer a.txt al directori nouD
+
+També, si en el cas anterior ja ens trobessim al directori nouD, seria una
+tonteria posar el path sencer, si podem un punt (.) fa la mateixa funció,
+seria com un "aquí mateix"
+Exemple: cp /Users/marta/Desktop/a.txt .
+Ús comanda: cp rutaOrigen rutaDesti
+
+*: L'asterisc és una mica més tricky, bàsicament el que fa es que si tenim
+fitxers que tenen una certa semblança en el nom, o que realment comparteix
+algun caracter en alguna de les seves posicions, l'asterisc concatenat amb les
+paraules dels fitxers, ens podem estalviar feina alhora de copiar-los o
+moure'ls sense haver d'anar un per un.
+Exemple: tinc els fitxers a.txt, b.txt, c.txt i creo una carpeta que es diu
+copiar
+
+Podria fer sense haver de fer-ho tres cops(un per cada fitxer)
+
+cp *.txt ./copiar
+
+(3 en 1) si cliqueu el tabulador després d'escriure (*.txt) us n'adonareu que
+us els agafa sense necessitat d'escriure'ls tots, que bàsicament és el que fa
+
+mv: mou els fitxers d'un lloc a un altre, NO ELS COPIA, els mou literalment.
+Té la mateixa sintaxis que cp, però ara canviant cp per mv.
+Us de la comanda: mv rutaOrigen rutaDesti
+
+unzip -l: ens permet descomprimir un fitxer amb l'extensió .zip i ens volca el
+seu contingut alla on vulgueu 
+unzip nomFitxer.zip
+
+rmdir: us permet borrar un directori
+rmdir nomCarpeta
+
+rm: us permet borrar un fixter
+rm nomFitxer
+
+SIUSPLAU, no feu: "rm *" que borrareu tot el que tingui una carpeta, sobretot
+El que estarieu dient és que voleu que us ho agafi tot, us es igual el què i
+que ho borri. Us borraria només fitxers, com és clar.
+
+clear: us permet borrar i netejar una mica la vostra terminal de les comandes.
+Us comanda: clear
+
+
+head: us mostra l'inici d'un fitxer
+ús comanda: head nomFitxer
+
+tail: us mostra el final d'un fitxer
+ús comanda: tail nomFitxer
+
+
+cat: us volca per la terminal tot el contingut d'un fitxer
+ús comanda: cat nomFitxer
+
+
+more: us volca una part petita del fitxer per pantalla i a mesura que  cliqueu
+enter us en mostra més
+ús comanda: more nomFitxer
+
+
+less: lo mateix que more, però podeu anar endarrere amb la tecla b
+ús comanda: less nomFitxer
+
+CTRL + D: Si us quedeu encallats i no sabeu què passa a la terminal, feu
+CTRL+D, pararà l'execució del procés que hagi llençat la comanda que hàgiu
+escrit i podreu tornar a començar en una nova linia
+
+wc: Us dona el nombre de linies que té un fitxer.
+Ús de la comanda: wc nomFitxer
+
+> : us permet redireccionar la sortida, és a dir, no deixa de ser com una
+> fletxa, que "apunta" algun lloc per tant agafa lo que té a l'esquerra i ho
+> passa a la dreta mitjançant ">". Exemple:
+head a.txt > b.txt //agafa el que hi ha al principi d'"a" i ho posa a "b"
+
+Obviament podeu fer construccions amb > més complexes o bé amb cat, more,
+tail, ...
+
+Si en comptes de sobreescriure el fitxer b amb el que hi ha "a" a, podeu fer
+servir >> i deixarà el que estigui a b, i afegirà el nou contingut de a.txt
+
+< : us permet agafar el contigut d'un fitxer que es troba a la dreta de < i
+passar-ho a l'altre banda. És molt util.
+
+
+

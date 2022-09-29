@@ -1,0 +1,72 @@
+Aquesta pràctica no proposa resoldre cap exercici. Tot i axí demana practicar
+una mica i familiaritzar-se amb l'entorn.
+
+Repàs rapid de les comandes:
+
+mkdir : permet crear un nou directori aka carpeta. 
+Ús de la comanda: mkdir nomCarpeta
+
+ls: llista el contingut del que es troba en un directori.
+Ús de la comanda: ls 
+O també: ls -l (per visualitzar el contingut en forma de llista
+O també: ls rutaDirectoris (per veure que hi ha en el darrer directori i poder
+llistar-lo per pantalla) (És molt còmode, ens pernet veure que hi ha en un
+directtori que es troba en una ruta única de l'ordinador sense moure'ns del
+directori actual
+
+pwd: ens permet veure la ruta actual en la que ens trobem. Basicament demanem
+que ens retorni on coi som per saber des de quin punt a quin punt hem d'enviar
+les coses o copiar-les si ho necessitem
+Ús de la comanda: pwd
+
+whoami: et retorna quin usuari és el que ha iniciat sessió al sistema
+Ús de la comanda: whoami
+
+Si us fixeu a la seva terminal diu messi, això és perquè li ha dit al seu
+ordinador messi i ha entrat amb l'usuari robert
+
+man: permet consultar al manual què fa una comanda. Si feu servir git bash no
+us funcionarà ja que si executeu "help", sense comes veureu les comandes
+disponibles i no les teniu totes. Us deixo el manual aquí:
+Ús de la comanda: man algunaComanda
+
+https://man7.org/linux/man-pages/man1/man.1.html
+
+--help: podeu afegir aquesta opció a qualsevol comanda per veure quines
+opcions té aquesta. Una opció no deixa d'afegir alguna cosa de valor a la
+funcionalitat de la comanda, és a dir, no deixa de comportar-se com ho feia
+simplement el que retornarà serà lleugermanet diferent en funció del que li
+haguem dit.
+ÚS de la comanda: comanda --help
+
+cd : ens permet canviar-nos de directori, en concret ens permet canviar-los
+del directori al que estem treballant, li diem (working directory) a un altre
+directori que li especifiquem.
+Ús de la comanda: cd nomDirectori
+O bé, ús de la comanda: cd rutaDeDirectori, ex: cd /Users/alumne/Desktop
+(anirem a l'escriptori en ultima instància perquè es el darrer directori que
+apareix)
+Ús de la comanda: cd .. (en permet anar endarrere en la ruta/path)
+
+cp: ens permet copiar algun fitxer d'una ruta d'origen a una ruta destí.
+Exemple: cp /Users/marta/Desktop/a.txt /Users/marta/Desktop/nouD/
+
+Copiem el fitxer a.txt al directori nouD
+
+També, si en el cas anterior ja ens trobessim al directori nouD, seria una
+tonteria posar el path sencer, si podem un punt (.) fa la mateixa funció,
+seria com un "aquí mateix"
+Exemple: cp /Users/marta/Desktop/a.txt .
+Ús comanda: cp rutaOrigen rutaDesti
+
+*: L'asterisc és una mica més tricky, bàsicament el que fa es que si tenim
+fitxers que tenen una certa semblança en el nom, o que realment comparteix
+algun caracter en alguna de les seves posicions, l'asterisc concatenat amb les
+paraules dels fitxers, ens podem estalviar feina alhora de copiar-los o
+moure'ls sense haver d'anar un per un.
+Exemple: tinc els fitxers a.txt, b.txt, c.txt i creo una carpeta que es diu
+copiar
+
+Podria fer sense haver de fer-ho tres cops(un per cada fitxer)
+
+
